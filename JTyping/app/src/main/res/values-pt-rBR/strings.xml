@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">J.Typing</string>
+    <string name="btn_cadastrados">Cadastros</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">JustTyping...</string>
+    <string name="second_fragment_label">Cadastro</string>
+    <string name="next">Entrar</string>
+    <string name="previous">Salvar</string>
+
+    <string name="txtBemVindo">Bem-Vindo</string>
+    <string name="Voltar">Voltar</string>
+
+    <string name="Nome">Nome</string>
+    <string name="Idade">Idade</string>
+    <string name="Email">E-mail</string>
+
+    <string name="Campos">Você deve preencher todos os campos!</string>
+    <string name="Excluir">Deseja excluir a pessoa abaixo?</string>
+    <string name="Cancelar">Cancelar</string>
+    <string name="Sim">Sim</string>
+
+
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Usuários Cadastrados</string>
+
+    <string-array name="sexo">
+        <item>Selecione o seu sexo</item>
+        <item>Masculino</item>
+        <item>Feminino</item>
+        <item>Outro</item>
+    </string-array>
+    <string name="title_activity_empty">EmptyActivity</string>
+
+</resources>
