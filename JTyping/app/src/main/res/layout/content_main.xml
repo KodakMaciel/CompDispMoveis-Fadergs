@@ -11,7 +11,7 @@
         android:id="@+id/btnCadastros1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#05188C"
+        android:backgroundTint="#FF0000"
         android:text="@string/second_fragment_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
