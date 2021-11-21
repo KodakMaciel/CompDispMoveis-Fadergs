@@ -66,7 +66,6 @@ public class ListEmplActivity extends AppCompatActivity {
     // Continuar apartir daqui, ListaProfActivity
     // Continuar apartir daqui, ListaProfActivity
     // Continuar apartir daqui, ListaProfActivity
-    // Continuar apartir daqui, ListaProfActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
