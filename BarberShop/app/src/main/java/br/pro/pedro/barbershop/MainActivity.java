@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ViewHolder mViewHolder = new ViewHolder();
+    public ViewHolder mViewHolder = new ViewHolder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

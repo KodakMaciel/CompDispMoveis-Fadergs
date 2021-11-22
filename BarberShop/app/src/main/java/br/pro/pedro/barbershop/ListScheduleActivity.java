@@ -3,24 +3,22 @@ package br.pro.pedro.barbershop;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toolbar;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListEmplActivity extends AppCompatActivity {
+public class ListScheduleActivity extends AppCompatActivity {
 
     private ListView lvFuncionarios;
     private List<Funcionario> listaDeFuncionario;
@@ -37,14 +35,14 @@ public class ListEmplActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ListEmplActivity.this, FormEmplActivity.class);
+                Intent intent = new Intent(ListScheduleActivity.this, FormEmplActivity.class);
                 startActivity(intent);
             }
         });
 
         lvFuncionarios = findViewById(R.id.lvFuncionarios);
         listaDeFuncionario = new ArrayList<>();
-        adapter = new ArrayAdapter<Funcionario>(ListEmplActivity.this, android.R.layout.simple_list_item_1, listaDeFuncionario);
+        adapter = new ArrayAdapter<Funcionario>(ListScheduleActivity.this, android.R.layout.simple_list_item_1, listaDeFuncionario);
         lvFuncionarios.setAdapter(adapter);
 
         lvFuncionarios.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -70,7 +68,7 @@ public class ListEmplActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.action_note:
-                Intent intent = new Intent(ListEmplActivity.this, ListScheduleActivity.class);
+                Intent intent = new Intent(ListScheduleActivity.this, ListEmplActivity.class);
                 startActivity( intent );
                 // Toast.makeText(this, "You have selected Schedule Class Menu", Toast.LENGTH_SHORT).show();
                 return true;
@@ -85,7 +83,7 @@ public class ListEmplActivity extends AppCompatActivity {
     private void excluir(final int posicao) {
         final Funcionario FuncSelecionado = listaDeFuncionario.get(posicao);
 
-        AlertDialog.Builder alerta = new AlertDialog.Builder(ListEmplActivity.this);
+        AlertDialog.Builder alerta = new AlertDialog.Builder(ListScheduleActivity.this);
         alerta.setTitle("Excluir Funcionario");
         alerta.setIcon(android.R.drawable.ic_delete);
         alerta.setMessage("Confirma a exclusão do Funcionario " + FuncSelecionado.nomeFunc + "?");
