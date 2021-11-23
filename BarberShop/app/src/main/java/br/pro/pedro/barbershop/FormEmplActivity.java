@@ -18,7 +18,7 @@ public class FormEmplActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_empl);
 
-        txt_empl = findViewById(R.id.txtname);
+        txt_empl = findViewById(R.id.etNomeFunc);
         btn_salvar_funcionario = findViewById(R.id.btn_salvar_funcionario);
 
         btn_salvar_funcionario.setOnClickListener(new View.OnClickListener() {
