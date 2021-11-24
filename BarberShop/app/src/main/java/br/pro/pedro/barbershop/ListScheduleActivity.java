@@ -22,20 +22,18 @@ public class ListScheduleActivity extends AppCompatActivity {
 
     private ListView lvFuncionarios;
     private List<Funcionario> listaDeFuncionario;
-    //private DatabaseReference reference;
-    //private ChildEventListener childEventListener;
     private ArrayAdapter<Funcionario> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_employee);
+        setContentView(R.layout.activity_form_sched);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ListScheduleActivity.this, FormEmplActivity.class);
+                Intent intent = new Intent(ListScheduleActivity.this, FormScheduleActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +66,7 @@ public class ListScheduleActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.action_note:
-                Intent intent = new Intent(ListScheduleActivity.this, ListEmplActivity.class);
+                Intent intent = new Intent(ListScheduleActivity.this, FormScheduleActivity.class);
                 startActivity( intent );
                 // Toast.makeText(this, "You have selected Schedule Class Menu", Toast.LENGTH_SHORT).show();
                 return true;

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ListScheduleActivity.class);
-                intent.putExtra("acao","inserir");
+                //intent.putExtra("acao","inserir");
                 startActivity(intent);
             }
         });
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ListEmplActivity.class);
-                intent.putExtra("acao","inserir");
+                //intent.putExtra("acao","inserir");
                 startActivity(intent);
             }
         });

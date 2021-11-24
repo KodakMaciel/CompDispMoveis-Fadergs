@@ -11,8 +11,18 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="agendaMenu">SCHEDULE</string>
-    <string name="title_activity_form_empl">FormEmpl</string>
-    <string name="nome_funcionario">Employee Name</string>
-    <string name="salvar">To save</string>
+    <string name="agendaMenu">Agenda</string>
+    <string name="title_activity_form_empl">Funcionario</string>
+    <string name="nome_funcionario">Nome Funcionario</string>
+    <string name="salvar">Salvar</string>
+
+    <string-array name="Funcionario">
+        <item>Selecione o trabalhador...</item>
+        <item>Iarley</item>
+        <item>Adriano Gabiru</item>
+        <item>Ceara</item>
+        <item>Indio</item>
+        <item>Clemer</item>
+    </string-array>
+
 </resources>
