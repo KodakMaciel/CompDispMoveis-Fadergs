@@ -30,7 +30,7 @@ public class FuncionarioDAO {
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        db.update("Funcionario", values, " id = " + Funcionario.getId(), null);
+        db.update("Funcionario", values, " idFunc = " + Funcionario.getId(), null);
     }
 
 
@@ -39,7 +39,7 @@ public class FuncionarioDAO {
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        db.delete("Funcionario", " id = " + idFunc, null);
+        db.delete("Funcionario", " idFunc = " + idFunc, null);
     }
 
     public static List<Funcionario> getFuncionarios(Context context){
@@ -68,12 +68,12 @@ public class FuncionarioDAO {
         return  lista;
     }
 
-    public static Funcionario getFuncionarioById(Context context, int idFuncionario) {
+    public static Funcionario getFuncionarioById(Context context, int idFunc) {
 
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM Funcionario where id = " + idFuncionario, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM Funcionario where idFunc = " + idFunc, null);
 
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();

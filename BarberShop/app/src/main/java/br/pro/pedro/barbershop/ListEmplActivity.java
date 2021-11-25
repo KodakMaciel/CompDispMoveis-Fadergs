@@ -48,11 +48,11 @@ public class ListEmplActivity extends AppCompatActivity {
         lvFuncionarios.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int idFunc = listaDeFuncionario.get(position).getId();
-                   Intent intent = new Intent(ListEmplActivity.this,FormEmplActivity.class);
-                intent.putExtra("acao","editar");
+               int idFunc = listaDeFuncionario.get(position).getId();
+               Intent intent = new Intent(ListEmplActivity.this,FormEmplActivity.class);
+               intent.putExtra("acao","editar");
                intent.putExtra("idFunc",idFunc);
-         startActivity(intent);
+               startActivity(intent);
            }
         });
 
@@ -130,6 +130,5 @@ public class ListEmplActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
 }

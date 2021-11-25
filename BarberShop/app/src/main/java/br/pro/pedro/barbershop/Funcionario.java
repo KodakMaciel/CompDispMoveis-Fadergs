@@ -6,13 +6,18 @@ public class Funcionario {
 
     public String nomeFunc;
 
+
     public Funcionario() {
 
     }
 
+    public Funcionario(String nomeFunc) {
+        this.nomeFunc = nomeFunc;
+    }
+
     @Override
     public String toString() {
-        return nomeFunc;
+        return   nomeFunc;
     }
 
     public int getId() {
@@ -20,11 +25,7 @@ public class Funcionario {
     }
 
     public void setId(int id) {
-        this.idFunc = idFunc;
-    }
-
-    public Funcionario(String nomeFunc) {
-        this.nomeFunc = nomeFunc;
+        this.idFunc = id;
     }
 
     public String getNomeFunc() {
@@ -32,7 +33,7 @@ public class Funcionario {
     }
 
     public void setNomeFunc(String nome) {
-        this.nomeFunc = nomeFunc;
+        this.nomeFunc = nome;
     }
 }
 
