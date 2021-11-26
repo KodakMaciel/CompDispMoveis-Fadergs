@@ -1,9 +1,9 @@
-#Aplicativo desenvolvido em aula
+# Agenda de um barbeiro
 
-Proposta de app: Uma barbearia no qual se deseja registrar  o agendamento de horario de cada cliente. Cliente entra em contato pelo WhatsApp solicita um horario ao funcionario, este olha no app a disponibilidade que existe, passa para o cliente os horarios disponiveis no app e após a confirmação do cliente registra  novo corte. Será composto de uma tela no qual será possivel digitar o nome a data e o horario do cliente e uma lista de consulta podendo excluir, editar, e adicionar um novo corte.
+<b>Proposta de desenvolvimeto:<b> Uma barbearia no qual se deseja registrar o agendamento de horários de cada cliente. O cliente entra em contato pelo WhatsApp, solicita um horário ao funcionario, o mesmo, olha no app para verificar a disponibilidade, passa para o cliente os horários disponiveis no app e após a confirmação do cliente registra novo corte. Será composto de uma tela no qual será possivel digitar o nome, data, horario do corte e uma lista de consulta podendo excluir, editar, e adicionar um novo corte.
 
-Autores: Guilherme Rosa e Pedro Maciel
+<b>Autores:<b> Guilherme Rosa e Pedro Maciel
 
-Professor: Msc. Adalto Sparremberger
+<b>Professor:<b> Msc. Adalto Sparremberger
 
-Cadeira: Computação para Dispositivos Móveis
+<b>Cadeira:<b> Computação para Dispositivos Móveis
