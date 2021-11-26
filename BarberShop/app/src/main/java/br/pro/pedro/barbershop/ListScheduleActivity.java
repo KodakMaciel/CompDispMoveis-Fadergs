@@ -1,5 +1,6 @@
 package br.pro.pedro.barbershop;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,81 +20,110 @@ import java.util.List;
 
 public class ListScheduleActivity extends AppCompatActivity {
 
-    private ListView lvFuncionarios;
-    private List<Funcionario> listaDeFuncionario;
-    private ArrayAdapter<Funcionario> adapter;
+    //  private ListView lvFuncionarios;
+    //  private ArrayAdapter<Funcionario> adapter;
+    private ListView lvAgenda;
+    private ArrayAdapter<Agenda> adapter;
+    private List<Agenda> agendaList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form_sched);
+        setContentView(R.layout.activity_list_schedule);
+
+        lvAgenda = findViewById(R.id.lvAgenda);
+
+        carregarClientes();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListScheduleActivity.this, FormScheduleActivity.class);
+                intent.putExtra("acao", "inserir");
                 startActivity(intent);
             }
         });
 
-        lvFuncionarios = findViewById(R.id.lvFuncionarios);
-        listaDeFuncionario = new ArrayList<>();
-        adapter = new ArrayAdapter<Funcionario>(ListScheduleActivity.this, android.R.layout.simple_list_item_1, listaDeFuncionario);
-        lvFuncionarios.setAdapter(adapter);
-
-        lvFuncionarios.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lvAgenda.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                excluir(position);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int id2 = agendaList.get(position).getId();
+                Intent intenet = new Intent(ListScheduleActivity.this, FormScheduleActivity.class);
+                intenet.putExtra("acao", "editar");
+                intenet.putExtra("id", id2);
+                startActivity(intenet);
+            }
+        });
+
+        lvAgenda.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int posicao, long id) {
+                excluir(posicao);
+
                 return true;
             }
         });
     }
 
+    private void excluir(int posicao) {
+        Agenda Agenda = agendaList.get(posicao);
+        android.app.AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+        alerta.setTitle("Excluir...");
+        alerta.setIcon(android.R.drawable.ic_input_delete);
+        alerta.setMessage(" Confirme a exclusão do cliente " + Agenda.getNome() + "?");
+        alerta.setNeutralButton("Cancelar", null);
+
+        alerta.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                AgendaDAO.excluir(ListScheduleActivity.this, Agenda.getId());
+                carregarClientes();
+            }
+        });
+        alerta.show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        carregarClientes();
+    }
+
+    private void carregarClientes() {
+        agendaList = AgendaDAO.getAgenda(this);
+        System.out.println(agendaList);
+        if (agendaList.size() == 0) {
+            Agenda fake = new Agenda("Agenda Livre!", "", "");
+            agendaList.add(fake);
+            //lvAgenda.setEnabled(false);
+        } else {
+            //lvAgenda.setEnabled(true);
+        }
+
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, agendaList);
+        // lvAgenda.setAdapter(adapter);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        switch (item.getItemId()) {
 
-            case R.id.action_note:
-                Intent intent = new Intent(ListScheduleActivity.this, FormScheduleActivity.class);
-                startActivity( intent );
-                // Toast.makeText(this, "You have selected Schedule Class Menu", Toast.LENGTH_SHORT).show();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.actions) {
+            return true;
         }
-    }
 
-
-    private void excluir(final int posicao) {
-        final Funcionario FuncSelecionado = listaDeFuncionario.get(posicao);
-
-        AlertDialog.Builder alerta = new AlertDialog.Builder(ListScheduleActivity.this);
-        alerta.setTitle("Excluir Funcionario");
-        alerta.setIcon(android.R.drawable.ic_delete);
-        alerta.setMessage("Confirma a exclusão do Funcionario " + FuncSelecionado.nomeFunc + "?");
-        alerta.setNeutralButton("Cancelar", null);
-        alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //reference.child("professores").child(profSelecionado.id).removeValue();
-
-                listaDeFuncionario.remove(posicao);
-                adapter.notifyDataSetChanged();
-            }
-        });
-        alerta.show();
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -40,45 +40,45 @@ public class ListEmplActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListEmplActivity.this, FormEmplActivity.class);
-                intent.putExtra("acao","inserir");
+                intent.putExtra("acao", "inserir");
                 startActivity(intent);
             }
         });
 
         lvFuncionarios.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               int idFunc = listaDeFuncionario.get(position).getId();
-               Intent intent = new Intent(ListEmplActivity.this,FormEmplActivity.class);
-               intent.putExtra("acao","editar");
-               intent.putExtra("idFunc",idFunc);
-               startActivity(intent);
-           }
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int idFunc = listaDeFuncionario.get(position).getId();
+                Intent intent = new Intent(ListEmplActivity.this, FormEmplActivity.class);
+                intent.putExtra("acao", "editar");
+                intent.putExtra("idFunc", idFunc);
+                startActivity(intent);
+            }
         });
 
         lvFuncionarios.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-              public boolean onItemLongClick(AdapterView<?> parent, View view, int posicao, long id) {
-               excluir(posicao);
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int posicao, long id) {
+                excluir(posicao);
 
-              return true;
-                 }
+                return true;
+            }
         });
 
     }
 
-      private void excluir(int posicao){
+    private void excluir(int posicao) {
         Funcionario Funcionario = listaDeFuncionario.get(posicao);
         android.app.AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setTitle("Excluir...");
-        alerta.setIcon(android.R.drawable.ic_input_delete);
+        alerta.setIcon(android.R.drawable.ic_delete);
         alerta.setMessage("Confirme a exclusão do Funcionario " + Funcionario.getNomeFunc() + "?");
-        alerta.setNeutralButton("Cancelar",null);
+        alerta.setNeutralButton("Cancelar", null);
 
         alerta.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                FuncionarioDAO.excluir(ListEmplActivity.this,Funcionario.getId());
+                FuncionarioDAO.excluir(ListEmplActivity.this, Funcionario.getId());
                 carregarFuncionario();
             }
         });
@@ -92,20 +92,19 @@ public class ListEmplActivity extends AppCompatActivity {
         carregarFuncionario();
     }
 
-    private void carregarFuncionario(){
+    private void carregarFuncionario() {
 
         listaDeFuncionario = FuncionarioDAO.getFuncionarios(this);
 
-        if(listaDeFuncionario.size() == 0) {
+        if (listaDeFuncionario.size() == 0) {
             Funcionario fake = new Funcionario("Lista vazia...");
-
             listaDeFuncionario.add(fake);
             lvFuncionarios.setEnabled(false);
-        }else{
+        } else {
             lvFuncionarios.setEnabled(true);
         }
 
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listaDeFuncionario);
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaDeFuncionario);
         lvFuncionarios.setAdapter(adapter);
     }
 

@@ -42,7 +42,7 @@ public class FuncionarioDAO {
         db.delete("Funcionario", " idFunc = " + idFunc, null);
     }
 
-    public static List<Funcionario> getFuncionarios(Context context){
+    public static List<Funcionario> getFuncionarios(Context context) {
         List<Funcionario> lista = new ArrayList<>();
 
         Banco conn = new Banco(context);
@@ -50,22 +50,21 @@ public class FuncionarioDAO {
 
         Cursor cursor = db.rawQuery("SELECT * FROM Funcionario order by nome", null);
 
-        if(cursor.getCount() > 0) {
-
+        if (cursor.getCount() > 0) {
             cursor.moveToFirst();
 
-            do{
+            do {
                 Funcionario Funcionario = new Funcionario();
                 Funcionario.setId(cursor.getInt(0));
                 Funcionario.setNomeFunc(cursor.getString(1));
 
                 lista.add(Funcionario);
 
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
 
         }
 
-        return  lista;
+        return lista;
     }
 
     public static Funcionario getFuncionarioById(Context context, int idFunc) {

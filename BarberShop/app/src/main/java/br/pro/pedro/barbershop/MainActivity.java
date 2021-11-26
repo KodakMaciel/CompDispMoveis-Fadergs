@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ListScheduleActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListScheduleActivity.class);
                 //intent.putExtra("acao","inserir");
                 startActivity(intent);
             }
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         employee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ListEmplActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListEmplActivity.class);
                 //intent.putExtra("acao","inserir");
                 startActivity(intent);
             }

@@ -1,6 +1,7 @@
 package br.pro.pedro.barbershop;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -38,25 +39,25 @@ public class FormEmplActivity extends AppCompatActivity {
         });
     }
 
-    private void carregarFormulario(){
-        int id = getIntent().getIntExtra("idProduto", 0);
+    private void carregarFormulario() {
+        int id = getIntent().getIntExtra("idFunc", 0);
         funcionario = FuncionarioDAO.getFuncionarioById(this, id);
-        txt_empl.setText( funcionario.getNomeFunc() );
-        }
+        txt_empl.setText(funcionario.getNomeFunc());
+    }
 
-    private void salvar(){
+    private void salvar() {
         String nome = txt_empl.getText().toString();
-        if(nome.isEmpty()){
-            Toast.makeText(this, "Você deve preencher todos os campos!", Toast.LENGTH_LONG ).show();
-        }else{
-            if( acao.equals("inserir")) {
+        if (nome.isEmpty()) {
+            Toast.makeText(this, "Você deve preencher todos os campos!", Toast.LENGTH_LONG).show();
+        } else {
+            if (acao.equals("inserir")) {
                 funcionario = new Funcionario();
             }
-            funcionario.setNomeFunc( nome );
-            if( acao.equals("inserir")) {
+            funcionario.setNomeFunc(nome);
+            if (acao.equals("inserir")) {
                 FuncionarioDAO.inserir(this, funcionario);
                 txt_empl.setText("");
-            }else{
+            } else {
                 FuncionarioDAO.editar(this, funcionario);
                 finish();
             }

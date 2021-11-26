@@ -13,8 +13,10 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="agendaMenu">Agenda</string>
     <string name="title_activity_form_empl">Funcionario</string>
-    <string name="nome_funcionario">Nome Funcionario</string>
-    <string name="salvar">Salvar</string>
+    <string name="nome_funcionario">Employee Name</string>
+    <string name="salvar">Save</string>
+
+    <string name="excluir">Exclude</string>
 
     <string-array name="Funcionario">
         <item>Selecione o trabalhador...</item>

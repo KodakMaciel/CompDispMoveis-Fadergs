@@ -27,7 +27,7 @@
         android:layout_height="55dp"
         android:background="@color/brown"
         android:ems="10"
-        android:text="Registrar Funcionario"
+        android:text="@string/registar_funcionario"
         android:textAlignment="center"
         android:textColor="#FFFF"
         android:textSize="22sp"
