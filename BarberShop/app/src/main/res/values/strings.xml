@@ -18,13 +18,4 @@
 
     <string name="excluir">Exclude</string>
 
-    <string-array name="Funcionario">
-        <item>Selecione o trabalhador...</item>
-        <item>Iarley</item>
-        <item>Adriano Gabiru</item>
-        <item>Ceara</item>
-        <item>Indio</item>
-        <item>Clemer</item>
-    </string-array>
-
 </resources>

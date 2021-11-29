@@ -20,10 +20,8 @@ import java.util.List;
 
 public class ListScheduleActivity extends AppCompatActivity {
 
-    //  private ListView lvFuncionarios;
-    //  private ArrayAdapter<Funcionario> adapter;
     private ListView lvAgenda;
-    private ArrayAdapter<Agenda> adapter;
+    private ArrayAdapter adapter;
     private List<Agenda> agendaList;
 
     @Override
@@ -48,10 +46,10 @@ public class ListScheduleActivity extends AppCompatActivity {
         lvAgenda.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int id2 = agendaList.get(position).getId();
+                int idAgenda = agendaList.get(position).getId();
                 Intent intenet = new Intent(ListScheduleActivity.this, FormScheduleActivity.class);
                 intenet.putExtra("acao", "editar");
-                intenet.putExtra("id", id2);
+                intenet.putExtra("id", idAgenda);
                 startActivity(intenet);
             }
         });
@@ -91,19 +89,22 @@ public class ListScheduleActivity extends AppCompatActivity {
     }
 
     private void carregarClientes() {
+
         agendaList = AgendaDAO.getAgenda(this);
-        System.out.println(agendaList);
+
         if (agendaList.size() == 0) {
             Agenda fake = new Agenda("Agenda Livre!", "", "");
             agendaList.add(fake);
-            //lvAgenda.setEnabled(false);
+            lvAgenda.setEnabled(false);
         } else {
-            //lvAgenda.setEnabled(true);
+            lvAgenda.setEnabled(true);
         }
 
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, agendaList);
-        // lvAgenda.setAdapter(adapter);
+        lvAgenda.setAdapter(adapter);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

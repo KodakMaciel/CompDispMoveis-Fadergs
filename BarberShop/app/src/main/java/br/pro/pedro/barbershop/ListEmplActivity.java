@@ -103,7 +103,7 @@ public class ListEmplActivity extends AppCompatActivity {
         } else {
             lvFuncionarios.setEnabled(true);
         }
-
+    // git refactory
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaDeFuncionario);
         lvFuncionarios.setAdapter(adapter);
     }

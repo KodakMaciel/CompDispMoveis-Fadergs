@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,8 +45,8 @@ public class FormScheduleActivity extends AppCompatActivity {
     }
 
     private void carregarAgenda() {
-        int id2 = getIntent().getIntExtra("id2", 0);
-        agenda = AgendaDAO.getAgendaById(this, id2);
+        int id = getIntent().getIntExtra("id", 0);
+        agenda = AgendaDAO.getAgendaById(this, id);
         txt_nameCust.setText(agenda.getNome());
         txt_Horario.setText(agenda.getHora());
         txt_Data.setText(agenda.getData());
@@ -56,11 +57,30 @@ public class FormScheduleActivity extends AppCompatActivity {
         String Data = txt_Data.getText().toString();
         String Horario = txt_Horario.getText().toString();
 
-        if (!nameCust.isEmpty()) {
-            Agenda Agenda = new Agenda();
-            Agenda.nome = nameCust;
-            Agenda.data = Data;
-            Agenda.hora = Horario;
+        if (nameCust.isEmpty() && Data.isEmpty() && Horario.isEmpty()) {
+            Toast.makeText(this, "Você deve preencher todos os campos!", Toast.LENGTH_LONG).show();
         }
+        else
+        {
+            if( acao.equals("inserir")) {
+                 agenda = new Agenda();
+            }
+
+            agenda.setNome( nameCust );
+            agenda.setData( Data );
+            agenda.setHora( Horario );
+
+            if( acao.equals("inserir")) {
+                AgendaDAO.inserir(this, agenda);
+                txt_nameCust.setText("");
+                txt_Data.setText("");
+                txt_Horario.setText("");
+
+            }else{
+                AgendaDAO.editar(this, agenda);
+                finish();
+            }
+        }
+
     }
 }

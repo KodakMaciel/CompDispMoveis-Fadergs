@@ -47,7 +47,7 @@ public class Agenda {
         return hora;
     }
 
-    public void setHora(String data) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 }

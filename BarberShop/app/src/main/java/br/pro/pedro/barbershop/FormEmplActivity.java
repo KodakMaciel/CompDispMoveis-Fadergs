@@ -38,13 +38,13 @@ public class FormEmplActivity extends AppCompatActivity {
             }
         });
     }
-
+    //Trazer formulário
     private void carregarFormulario() {
         int id = getIntent().getIntExtra("idFunc", 0);
         funcionario = FuncionarioDAO.getFuncionarioById(this, id);
         txt_empl.setText(funcionario.getNomeFunc());
     }
-
+    //Método Salvar
     private void salvar() {
         String nome = txt_empl.getText().toString();
         if (nome.isEmpty()) {

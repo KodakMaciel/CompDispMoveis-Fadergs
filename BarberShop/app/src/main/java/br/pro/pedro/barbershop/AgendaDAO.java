@@ -34,12 +34,12 @@ public class AgendaDAO {
         db.update("Agenda", values, " id =" + Agenda.getId(), null);
     }
 
-    public static void excluir(Context context, int id) {
+    public static void excluir(Context context, int idAgenda) {
 
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        db.delete("Agenda", "id = " + id, null);
+        db.delete("Agenda", "id = " + idAgenda, null);
     }
 
     public static List<Agenda> getAgenda(Context context) {
@@ -67,12 +67,12 @@ public class AgendaDAO {
         return agendaList;
     }
 
-    public static Agenda getAgendaById(Context context, int id) {
+    public static Agenda getAgendaById(Context context, int idAgenda) {
 
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM Agenda where id = " + id, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM Agenda where id = " + idAgenda, null);
 
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -80,6 +80,8 @@ public class AgendaDAO {
             Agenda Agenda = new Agenda();
             Agenda.setId(cursor.getInt(0));
             Agenda.setNome(cursor.getString(1));
+            Agenda.setHora(cursor.getString(2));
+            Agenda.setData(cursor.getString(3));
 
             return Agenda;
 
