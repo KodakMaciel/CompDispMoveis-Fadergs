@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -68,8 +69,8 @@ public class ListScheduleActivity extends AppCompatActivity {
         Agenda Agenda = agendaList.get(posicao);
         android.app.AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setTitle("Excluir...");
-        alerta.setIcon(android.R.drawable.ic_input_delete);
-        alerta.setMessage(" Confirme a exclusão do cliente " + Agenda.getNome() + "?");
+        alerta.setIcon(android.R.drawable.ic_delete);
+        alerta.setMessage("Confirme a exclusão do cliente " + Agenda.getNome() + "?");
         alerta.setNeutralButton("Cancelar", null);
 
         alerta.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
@@ -77,6 +78,7 @@ public class ListScheduleActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 AgendaDAO.excluir(ListScheduleActivity.this, Agenda.getId());
                 carregarClientes();
+
             }
         });
         alerta.show();
@@ -127,4 +129,5 @@ public class ListScheduleActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

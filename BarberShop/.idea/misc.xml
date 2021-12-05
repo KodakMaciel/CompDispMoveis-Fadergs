@@ -3,18 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2712962962962963" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/ic_baseline_add_alarm_24.xml" value="0.3880208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.3880208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3380208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.3880208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3880208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/my_border.xml" value="0.19444444444444445" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/spinner_custom_sched.xml" value="0.13518518518518519" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/toast_delet_client.xml" value="0.3880208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/toast_edit.xml" value="0.24444444444444444" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/toast_empty.xml" value="0.3880208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/drawable/toast_registered.xml" value="0.19166666666666668" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/activity_form_empl.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/activity_form_sched.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/activity_list_employee.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/activity_list_schedule.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/activity_list_schedule.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/border_txt_box.xml" value="0.15678824721377912" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/content_activity_list_employee.xml" value="0.3192019950124688" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/content_activity_list_schedule.xml" value="0.18085106382978725" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/custom_spinner.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/custom_toast.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/custom_toast_delete_sched.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/custom_toast_empty_sched.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/custom_toast_save_sched.xml" value="0.9" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/fragment_first.xml" value="0.3578125" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/fragment_second.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/my_border.xml" value="0.2866847826086957" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/spinner_custom.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/layout/spinner_custom_list.xml" value="0.10157041540020263" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/menu/menu_main.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3880208333333333" />
         <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3880208333333333" />
+        <entry key="..\:/AndroidStudioProjects/BarberShop/app/src/main/res/xml/actions.xml" value="0.25104166666666666" />
         <entry key="..\:/Users/Guilherme/Desktop/Projetos/CompDispMoveis-Fadergs/BarberShop/app/src/main/res/layout/activity_form_empl.xml" value="0.18125" />
         <entry key="..\:/Users/Guilherme/Desktop/Projetos/CompDispMoveis-Fadergs/BarberShop/app/src/main/res/layout/activity_form_sched.xml" value="0.18125" />
         <entry key="..\:/Users/Guilherme/Desktop/Projetos/CompDispMoveis-Fadergs/BarberShop/app/src/main/res/layout/activity_list_employee.xml" value="0.12907608695652173" />

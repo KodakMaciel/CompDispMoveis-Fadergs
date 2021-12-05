@@ -17,7 +17,13 @@ public class Agenda {
     }
 
     @Override
-    public String toString() { return nome + " - " + data + " - " + hora;}
+    public String toString() {
+        if(nome == "Agenda Livre!")
+            return nome;
+        else{
+            return nome + " - " + data + " - " + hora;
+        }
+    }
 
     public int getId() {
         return id;

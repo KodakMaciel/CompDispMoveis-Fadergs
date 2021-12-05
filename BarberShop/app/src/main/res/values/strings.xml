@@ -18,4 +18,11 @@
 
     <string name="excluir">Exclude</string>
 
+    <!-- Toast -->
+    <string name="editado">Editado com sucesso!</string>
+    <string name="salvar_cliente">Cliente Agendado!</string>
+    <string name="cliente_vazio">Preencha todos os campos!</string>
+    <string name="cliente_excluido">Cliente excluido!</string>
+
+
 </resources>

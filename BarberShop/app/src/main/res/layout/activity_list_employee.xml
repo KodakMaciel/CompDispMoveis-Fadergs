@@ -41,4 +41,12 @@
         app:layout_anchorGravity="center"
         app:popupTheme="@style/Theme.BarberShop.PopupOverlay" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="371dp"
+        android:layout_height="45dp"
+        app:layout_anchor="@+id/toolbar"
+        app:layout_anchorGravity="center"
+        app:srcCompat="@drawable/list_title" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

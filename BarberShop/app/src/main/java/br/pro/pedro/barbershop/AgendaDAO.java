@@ -67,6 +67,20 @@ public class AgendaDAO {
         return agendaList;
     }
 
+    public ArrayList<String> buscaDadosSpinner(Context context) {
+        Banco conn = new Banco(context);
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String sql_busca_dados_spinner = "Select * FROM Funcionario";
+        ArrayList<String> dados_Spinner = new ArrayList<>();
+        Cursor cursor = db.rawQuery(sql_busca_dados_spinner, null);
+
+        while (cursor.moveToNext()) {
+            dados_Spinner.add(cursor.getString(cursor.getColumnIndexOrThrow("nome")));
+        }
+
+        return dados_Spinner;
+    }
+
     public static Agenda getAgendaById(Context context, int idAgenda) {
 
         Banco conn = new Banco(context);

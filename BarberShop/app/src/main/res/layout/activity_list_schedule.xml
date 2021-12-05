@@ -29,7 +29,7 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="#F4511E"
         android:tint="#fff"
-        app:srcCompat="@android:drawable/ic_input_add"
+        app:srcCompat="@drawable/ic_baseline_add_alarm_24"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.Toolbar
@@ -40,5 +40,13 @@
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="center"
         app:popupTheme="@style/Theme.BarberShop.PopupOverlay" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="371dp"
+        android:layout_height="45dp"
+        app:layout_anchor="@+id/toolbar"
+        app:layout_anchorGravity="center"
+        app:srcCompat="@drawable/list_title_2" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
