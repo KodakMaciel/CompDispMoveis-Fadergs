@@ -4,16 +4,17 @@ public class Agenda {
 
     public int id;
 
-    public String nome, hora, data;
+    public String nome, hora, data, barbeiro;
 
     public Agenda() {
 
     }
 
-    public Agenda(String nome, String data, String hora) {
+    public Agenda(String nome, String data, String hora,String barbeiro) {
         this.nome = nome;
         this.data = data;
         this.hora = hora;
+        this.barbeiro = barbeiro;
     }
 
     @Override
@@ -21,7 +22,7 @@ public class Agenda {
         if(nome == "Agenda Livre!")
             return nome;
         else{
-            return nome + " - " + data + " - " + hora;
+            return nome + " - " + data + " - " + hora + " - " + barbeiro;
         }
     }
 
@@ -56,4 +57,8 @@ public class Agenda {
     public void setHora(String hora) {
         this.hora = hora;
     }
+
+    public String getBarbeiro() { return barbeiro;}
+
+    public void setBarbeiro(String barbeiro) { this.barbeiro = barbeiro;}
 }

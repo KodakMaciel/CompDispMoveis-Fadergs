@@ -95,7 +95,7 @@ public class ListScheduleActivity extends AppCompatActivity {
         agendaList = AgendaDAO.getAgenda(this);
 
         if (agendaList.size() == 0) {
-            Agenda fake = new Agenda("Agenda Livre!", "", "");
+            Agenda fake = new Agenda("Agenda Livre!", "", "","");
             agendaList.add(fake);
             lvAgenda.setEnabled(false);
         } else {

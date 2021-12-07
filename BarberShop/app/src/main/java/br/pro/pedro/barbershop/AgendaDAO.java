@@ -15,6 +15,7 @@ public class AgendaDAO {
         values.put("nome", Agenda.getNome());
         values.put("hora", Agenda.getHora());
         values.put("data", Agenda.getData());
+        values.put("barbeiro", Agenda.getBarbeiro());
 
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
@@ -27,6 +28,7 @@ public class AgendaDAO {
         values.put("nome", Agenda.getNome());
         values.put("hora", Agenda.getHora());
         values.put("data", Agenda.getData());
+        values.put("barbeiro", Agenda.getBarbeiro());
 
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
@@ -59,6 +61,7 @@ public class AgendaDAO {
                 Agenda.setNome(cursor.getString(1));
                 Agenda.setHora(cursor.getString(2));
                 Agenda.setData(cursor.getString(3));
+                Agenda.setBarbeiro(cursor.getString(4));
 
                 agendaList.add(Agenda);
 
@@ -96,6 +99,7 @@ public class AgendaDAO {
             Agenda.setNome(cursor.getString(1));
             Agenda.setHora(cursor.getString(2));
             Agenda.setData(cursor.getString(3));
+            Agenda.setBarbeiro(cursor.getString(4));
 
             return Agenda;
 

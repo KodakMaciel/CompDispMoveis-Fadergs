@@ -25,6 +25,7 @@ public class FormScheduleActivity extends AppCompatActivity {
     private Button btn_salvar_Agenda;
     private Agenda agenda;
     private String acao;
+    private Spinner spinner;
 
     public final int SAVE = 0;
     public final int EDIT = 1;
@@ -40,7 +41,7 @@ public class FormScheduleActivity extends AppCompatActivity {
         txt_Data = findViewById(R.id.txtData);
         txt_Horario = findViewById(R.id.txt_horario);
         btn_salvar_Agenda = findViewById(R.id.btn_salvar_Agenda);
-        Spinner spinner = findViewById(R.id.spinner);
+        spinner = findViewById(R.id.spinner);
 
         AgendaDAO AgendaDAO = new AgendaDAO();
 
@@ -127,8 +128,9 @@ public class FormScheduleActivity extends AppCompatActivity {
         String nameCust = txt_nameCust.getText().toString();
         String Data = txt_Data.getText().toString();
         String Horario = txt_Horario.getText().toString();
+        String barbeiro = spinner.getSelectedItem().toString();
 
-        if (nameCust.isEmpty() && Data.isEmpty() && Horario.isEmpty()) {
+        if (nameCust.isEmpty() && Data.isEmpty() && Horario.isEmpty() && barbeiro.isEmpty()) {
             emptyToast(EMPTY, "Preencha todos os campos!");
         }
         else
@@ -140,12 +142,14 @@ public class FormScheduleActivity extends AppCompatActivity {
             agenda.setNome( nameCust );
             agenda.setData( Data );
             agenda.setHora( Horario );
+            agenda.setBarbeiro( barbeiro );
 
             if( acao.equals("inserir")) {
                 AgendaDAO.inserir(this, agenda);
                 txt_nameCust.setText("");
                 txt_Data.setText("");
                 txt_Horario.setText("");
+                spinner.setSelection(0);
                 showToast(SAVE, "Cadastrado com sucesso!");
 
             }else{
