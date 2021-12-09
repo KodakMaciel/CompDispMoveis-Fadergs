@@ -130,7 +130,7 @@ public class FormScheduleActivity extends AppCompatActivity {
         String Horario = txt_Horario.getText().toString();
         String barbeiro = spinner.getSelectedItem().toString();
 
-        if (nameCust.isEmpty() && Data.isEmpty() && Horario.isEmpty() && barbeiro.isEmpty()) {
+        if (nameCust.isEmpty() || Data.isEmpty() || Horario.isEmpty()) {
             emptyToast(EMPTY, "Preencha todos os campos!");
         }
         else
