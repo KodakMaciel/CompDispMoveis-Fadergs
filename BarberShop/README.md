@@ -7,3 +7,5 @@
 <b>Professor:<b> Msc. Adalto Sparremberger
 
 <b>Cadeira:<b> Computação para Dispositivos Móveis
+
+ ![Project Gif](https://github.com/KodakMaciel/CompDispMoveis-Fadergs/blob/main/BarberShop/20211208_200250.gif)
